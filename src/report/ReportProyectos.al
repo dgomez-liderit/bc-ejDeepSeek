@@ -25,15 +25,17 @@ report 50101 "Informe de Proyectos"
                 column(Horas_planificadas; "Horas planificadas") { }
                 column(Usuario_asignado; "Usuario asignado") { }
                 column(Finalizada; Finalizada) { }
-            }
-            dataitem("Registro de tiempo"; "Registro de tiempo")
-            {
-                DataItemLink = "Proyecto" = field("N Proyecto");
-                column(Proyecto; Proyecto) { }
-                column(Tarea_del_proyecto; "Tarea del proyecto") { }
-                column(Horas_registradas; "Horas registradas") { }
-                column(Descripcion; Descripcion) { }
-                column(Usuario_impicado; "Usuario impicado") { }
+
+                dataitem("Registro de tiempo"; "Registro de tiempo")
+                {
+                    DataItemLink = "Proyecto" = field("Numero de tarea");
+                    column(Proyecto_Asociado; Proyecto) { }
+                    column(Tarea_del_proyecto; "Tarea del proyecto") { }
+                    column(Horas_registradas; "Horas registradas") { }
+                    column(Descripcion; Descripcion) { }
+                    column(Usuario_impicado; "Usuario impicado") { }
+                }
+
             }
             trigger OnPreDataItem()
             begin
@@ -42,9 +44,8 @@ report 50101 "Informe de Proyectos"
                 end;
             end;
         }
+
     }
-
-
     requestpage
     {
         AboutTitle = 'Teaching tip title';
