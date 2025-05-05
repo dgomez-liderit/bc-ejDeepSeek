@@ -35,6 +35,27 @@ table 50100 Proyecto
             DataClassification = ToBeClassified;
             TableRelation = Customer."No.";
         }
+        field(6; "% TareasFinalizadas"; Integer)
+        {
+            DataClassification = ToBeClassified;
+            Editable = false;
+            trigger OnLookup()
+            var
+                contador: Integer;
+                tarea: Record "Tarea de Proyecto";
+            begin
+                if tarea.FindSet()
+                then
+                    repeat
+                        if (tarea.Finalizada) then begin
+                            contador += 0.5;
+                            "% TareasFinalizadas" := contador;
+                        end;
+                    until tarea.Next() = 0;
+
+            end;
+
+        }
     }
 
     keys
