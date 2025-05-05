@@ -37,15 +37,17 @@ page 50102 "Ficha de proyecto"
                     ApplicationArea = All;
                 }
             }
-        }
-        area(Factboxes)
-        {
-            part(TareasPart; "Tareas del proyecto")
+            group(Tareas)
             {
-                ApplicationArea = All;
-                SubPageLink = "Pertenece al proyecto" = field("N Proyecto");
+                part(TareasPart; "Tareas del proyecto")
+                {
+
+                    ApplicationArea = All;
+                    SubPageLink = "Pertenece al proyecto" = field("N Proyecto");
+                }
             }
         }
+
     }
 
     actions
