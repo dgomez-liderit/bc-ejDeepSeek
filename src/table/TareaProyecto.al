@@ -33,6 +33,16 @@ table 50101 "Tarea de Proyecto"
         field(6; Finalizada; Boolean)
         {
             DataClassification = ToBeClassified;
+            trigger OnValidate()
+            var
+                Proyecto: Record Proyecto;
+            begin
+                if Proyecto.Get("Pertenece al proyecto")
+                then begin
+                    Proyecto."% TareasFinalizadas" := Proyecto.CalculateCompletionPercentage();
+                    Proyecto.Modify();
+                end;
+            end;
         }
     }
 

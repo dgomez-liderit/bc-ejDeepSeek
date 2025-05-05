@@ -1,60 +1,48 @@
 table 50100 Proyecto
 {
-    DataClassification = ToBeClassified;
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1; "N Proyecto"; Integer)
+        field(1; "N Proyecto"; Code[20])
         {
-            DataClassification = ToBeClassified;
-
+            DataClassification = CustomerContent;
         }
         field(2; "Fecha inicio"; Date)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(3; "Fecha fin"; Date)
-
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
+
             trigger OnValidate()
             begin
-                if ("Fecha inicio" > "Fecha fin")
-                then
+                if ("Fecha inicio" > "Fecha fin") then
                     Error('La fecha de inicio no puede ser posterior a la de fin');
             end;
         }
         field(4; Estado; Option)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionMembers = Planning,Active,Completed,Cancelled;
         }
-
         field(5; "Cliente Asociado"; Code[20])
         {
-            DataClassification = ToBeClassified;
-            TableRelation = Customer."No.";
+            DataClassification = CustomerContent;
+            TableRelation = Customer;
         }
-        field(6; "% TareasFinalizadas"; Integer)
+        field(6; "% TareasFinalizadas"; Decimal)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
-            trigger OnLookup()
-            var
-                contador: Integer;
-                tarea: Record "Tarea de Proyecto";
+            DecimalPlaces = 0 : 2;
+
+            trigger OnValidate()
             begin
-                if tarea.FindSet()
-                then
-                    repeat
-                        if (tarea.Finalizada) then begin
-                            contador += 0.5;
-                            "% TareasFinalizadas" := contador;
-                        end;
-                    until tarea.Next() = 0;
-
+                // Se calcula automáticamente con una función
+                "% TareasFinalizadas" := CalculateCompletionPercentage();
             end;
-
         }
     }
 
@@ -66,32 +54,22 @@ table 50100 Proyecto
         }
     }
 
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
-
+    procedure CalculateCompletionPercentage(): Decimal
     var
-        myInt: Integer;
-
-    trigger OnInsert()
+        Tarea: Record "Tarea de Proyecto";
+        TareasTotales: Integer;
+        TareasCompletadas: Integer;
     begin
+        Tarea.SetRange("Pertenece al proyecto", "N Proyecto");
+        TareasTotales := Tarea.Count();
 
-    end;
+        Tarea.SetRange(Finalizada, true);
+        TareasCompletadas := Tarea.Count();
 
-    trigger OnModify()
-    begin
+        if TareasTotales = 0 then
+            exit(0);
 
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
+        exit((TareasCompletadas / TareasTotales) * 100);
     end;
 
 }
