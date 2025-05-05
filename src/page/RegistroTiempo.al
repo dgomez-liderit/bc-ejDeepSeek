@@ -14,6 +14,11 @@ page 50104 "Registro de tiempo"
                 field("Linea Registro"; Rec."Linea Registro")
                 {
                     ApplicationArea = All;
+                    Visible = false;
+                }
+                field(Proyecto; Rec.Proyecto)
+                {
+                    ApplicationArea = All;
                 }
                 field("Tarea del proyecto"; Rec."Tarea del proyecto")
                 {
@@ -53,4 +58,13 @@ page 50104 "Registro de tiempo"
             }
         }
     }
+    procedure SetProyecto(pProyecto: Code[20])
+    var
+        RegistroTiempo: Record "Registro de tiempo";
+    begin
+        RegistroTiempo.SetRange(Proyecto, pProyecto);
+        CurrPage.SetTableView(RegistroTiempo);
+        CurrPage.Run();
+    end;
+
 }

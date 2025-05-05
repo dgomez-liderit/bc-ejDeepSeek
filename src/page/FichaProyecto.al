@@ -54,12 +54,16 @@ page 50102 "Ficha de proyecto"
     {
         area(Processing)
         {
-            action(ActionName)
+            action("Registrar tiempo")
             {
 
                 trigger OnAction()
+                var
+                    PaginaRegistro: Page "Registro de tiempo";
                 begin
-
+                    CurrPage.TareasPart.Page.RegistrarTiempoDesdePadre();
+                    // PaginaRegistro.SetProyecto(Rec."N Proyecto");
+                    // Page.Run(Page::"Registro de tiempo", Rec);
                 end;
             }
         }

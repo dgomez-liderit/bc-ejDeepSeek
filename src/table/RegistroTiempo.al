@@ -13,6 +13,15 @@ table 50102 "Registro de tiempo"
         {
             DataClassification = ToBeClassified;
             TableRelation = "Tarea de Proyecto";
+            trigger OnValidate()
+            var
+                Proyecto: Record "Proyecto";
+                tarea: Record "Tarea de Proyecto";
+            begin
+                tarea.Get(Rec."Tarea del proyecto");
+                Proyecto.Get(tarea."Pertenece al proyecto");
+                Rec.Proyecto := Proyecto."N Proyecto";
+            end;
         }
         field(3; "Usuario impicado"; Code[50])
         {
@@ -27,6 +36,11 @@ table 50102 "Registro de tiempo"
         field(5; "Descripcion"; Text[100])
         {
             DataClassification = ToBeClassified;
+        }
+        field(6; "Proyecto"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = Proyecto;
         }
     }
 

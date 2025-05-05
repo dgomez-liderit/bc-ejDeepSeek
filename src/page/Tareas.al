@@ -46,43 +46,24 @@ page 50103 "Tareas del proyecto"
         }
     }
 
-    actions
-    {
-        area(Processing)
-        {
-            action("Registrar Tiempo")
-            {
-                ApplicationArea = All;
-                Image = Timesheet;
-                Promoted = true;
-                PromotedCategory = Process;
 
-                trigger OnAction()
-                var
-                    RegistroTiempo: Record "Registro de tiempo";
-                    PaginaRegistro: Page "Registro de tiempo";
-                begin
-                    RegistroTiempo.Init();
-                    RegistroTiempo."Tarea del proyecto" := Rec."Numero de tarea";
-                    // RegistroTiempo."Pertenece al proyecto" := Rec."Pertenece al proyecto";
-                    PaginaRegistro.SetRecord(RegistroTiempo);
-                    PaginaRegistro.RunModal();
-                end;
-            }
-        }
-    }
 
-    // local procedure GetHorasRegistradas(): Decimal
-    // var
-    //     RegistroTiempo: Record "Registro de tiempo";
-    // begin
-    //     RegistroTiempo.SetRange("Tarea del proyecto", Rec."Numero de tarea");
-    //     RegistroTiempo.SetRange(Po, Rec."Pertenece al proyecto");
-    //     if RegistroTiempo.FindSet() then
-    //         repeat
-    //             Result += RegistroTiempo."Horas registradas";
-    //         until RegistroTiempo.Next() = 0;
+    procedure RegistrarTiempoDesdePadre()
+    var
+        RegistroTiempo: Record "Registro de tiempo";
+        PaginaRegistro: Page "Registro de tiempo";
+    begin
+        if Rec.IsEmpty then
+            Error('No hay tarea seleccionada.');
 
-    //     exit(Result);
-    // end;
+        RegistroTiempo.Init();
+        RegistroTiempo."Tarea del proyecto" := Rec."Numero de tarea";
+        RegistroTiempo."Usuario impicado" := Rec."Usuario asignado";
+        RegistroTiempo.Descripcion := Rec.Descripcion;
+        RegistroTiempo.Proyecto := Rec."Pertenece al proyecto";
+        RegistroTiempo.Insert();
+        PaginaRegistro.SetProyecto(Rec."Pertenece al proyecto");
+
+    end;
+
 }
