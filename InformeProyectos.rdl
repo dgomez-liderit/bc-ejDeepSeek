@@ -211,7 +211,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>Horas Totales</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -389,21 +389,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox212">
+                        <Textbox Name="Horas_Totales">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!Horas_Totales.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox212</rd:DefaultName>
+                          <rd:DefaultName>Horas_Totales</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1502,6 +1502,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         </Field>
         <Field Name="TareasFinalizadasFormat">
           <DataField>TareasFinalizadasFormat</DataField>
+        </Field>
+        <Field Name="Horas_Totales">
+          <DataField>Horas_Totales</DataField>
+        </Field>
+        <Field Name="Horas_TotalesFormat">
+          <DataField>Horas_TotalesFormat</DataField>
         </Field>
         <Field Name="Numero_de_tarea">
           <DataField>Numero_de_tarea</DataField>

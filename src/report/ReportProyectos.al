@@ -15,7 +15,7 @@ report 50101 "Informe de Proyectos"
             column(Estado; Estado) { }
             column(Cliente_Asociado; "Cliente Asociado") { }
             column(TareasFinalizadas; "% TareasFinalizadas") { }
-
+            column(Horas_Totales; "Horas Totales") { }
             dataitem("Tarea de Proyecto"; "Tarea de Proyecto")
             {
                 DataItemLink = "Pertenece al proyecto" = field("N Proyecto");

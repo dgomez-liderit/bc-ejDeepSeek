@@ -44,6 +44,13 @@ table 50100 Proyecto
                 "% TareasFinalizadas" := CalculateCompletionPercentage();
             end;
         }
+        field(7; "Horas Totales"; Decimal)
+        {
+            FieldClass = FlowField;
+            CalcFormula = sum("Tarea de Proyecto"."Horas planificadas" where("Pertenece al Proyecto" = field("N Proyecto")));
+            Editable = false;
+            DecimalPlaces = 0 : 2;
+        }
     }
 
     keys

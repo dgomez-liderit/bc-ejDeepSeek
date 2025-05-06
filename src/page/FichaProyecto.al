@@ -37,6 +37,10 @@ page 50102 "Ficha de proyecto"
                 {
                     ApplicationArea = All;
                 }
+                field("Horas Totales"; Rec."Horas Totales")
+                {
+
+                }
             }
             group(Tareas)
             {
@@ -69,4 +73,9 @@ page 50102 "Ficha de proyecto"
             }
         }
     }
+    trigger OnAfterGetRecord()
+    begin
+        Rec.CalcFields("Horas Totales");
+    end;
+
 }
