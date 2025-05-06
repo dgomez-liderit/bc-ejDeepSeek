@@ -35,7 +35,7 @@ report 50101 "Informe de Proyectos"
                     column(Descripcion; Descripcion) { }
                     column(Usuario_impicado; "Usuario impicado") { }
                 }
-
+                //
             }
             trigger OnPreDataItem()
             begin
