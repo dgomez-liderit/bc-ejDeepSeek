@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-05-05T14:42:39.0183204Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-05-06T06:03:42.9896103Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,76 +22,6 @@
       <rd:DataSourceID>b2a67de9-e631-4f00-b894-a879aae916b3</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="N_Proyecto">
-          <DataField>N_Proyecto</DataField>
-        </Field>
-        <Field Name="Fecha_inicio">
-          <DataField>Fecha_inicio</DataField>
-        </Field>
-        <Field Name="Fecha_fin">
-          <DataField>Fecha_fin</DataField>
-        </Field>
-        <Field Name="Estado">
-          <DataField>Estado</DataField>
-        </Field>
-        <Field Name="Cliente_Asociado">
-          <DataField>Cliente_Asociado</DataField>
-        </Field>
-        <Field Name="TareasFinalizadas">
-          <DataField>TareasFinalizadas</DataField>
-        </Field>
-        <Field Name="TareasFinalizadasFormat">
-          <DataField>TareasFinalizadasFormat</DataField>
-        </Field>
-        <Field Name="Numero_de_tarea">
-          <DataField>Numero_de_tarea</DataField>
-        </Field>
-        <Field Name="Pertenece_al_proyecto">
-          <DataField>Pertenece_al_proyecto</DataField>
-        </Field>
-        <Field Name="Descripcion_Tarea">
-          <DataField>Descripcion_Tarea</DataField>
-        </Field>
-        <Field Name="Horas_planificadas">
-          <DataField>Horas_planificadas</DataField>
-        </Field>
-        <Field Name="Horas_planificadasFormat">
-          <DataField>Horas_planificadasFormat</DataField>
-        </Field>
-        <Field Name="Usuario_asignado">
-          <DataField>Usuario_asignado</DataField>
-        </Field>
-        <Field Name="Finalizada">
-          <DataField>Finalizada</DataField>
-        </Field>
-        <Field Name="Proyecto_Asociado">
-          <DataField>Proyecto_Asociado</DataField>
-        </Field>
-        <Field Name="Tarea_del_proyecto">
-          <DataField>Tarea_del_proyecto</DataField>
-        </Field>
-        <Field Name="Horas_registradas">
-          <DataField>Horas_registradas</DataField>
-        </Field>
-        <Field Name="Horas_registradasFormat">
-          <DataField>Horas_registradasFormat</DataField>
-        </Field>
-        <Field Name="Descripcion">
-          <DataField>Descripcion</DataField>
-        </Field>
-        <Field Name="Usuario_impicado">
-          <DataField>Usuario_impicado</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -100,13 +30,13 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.06389in</Width>
+                  <Width>1.69722in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.06389in</Width>
+                  <Width>1.50556in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.06389in</Width>
+                  <Width>1.93056in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -398,10 +328,10 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <Top>0.39167in</Top>
-            <Left>1.33in</Left>
-            <Height>0.71667in</Height>
-            <Width>10.19167in</Width>
+            <Top>1.075in</Top>
+            <Left>0.83833in</Left>
+            <Height>0.71666in</Height>
+            <Width>6.13334in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -451,8 +381,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.23833in</Top>
-              <Left>4.57167in</Left>
+              <Top>0.28in</Top>
+              <Left>2.89667in</Left>
               <Height>0.96389in</Height>
               <Width>4.95in</Width>
               <ZIndex>1</ZIndex>
@@ -477,12 +407,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -564,4 +488,74 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="N_Proyecto">
+          <DataField>N_Proyecto</DataField>
+        </Field>
+        <Field Name="Fecha_inicio">
+          <DataField>Fecha_inicio</DataField>
+        </Field>
+        <Field Name="Fecha_fin">
+          <DataField>Fecha_fin</DataField>
+        </Field>
+        <Field Name="Estado">
+          <DataField>Estado</DataField>
+        </Field>
+        <Field Name="Cliente_Asociado">
+          <DataField>Cliente_Asociado</DataField>
+        </Field>
+        <Field Name="TareasFinalizadas">
+          <DataField>TareasFinalizadas</DataField>
+        </Field>
+        <Field Name="TareasFinalizadasFormat">
+          <DataField>TareasFinalizadasFormat</DataField>
+        </Field>
+        <Field Name="Numero_de_tarea">
+          <DataField>Numero_de_tarea</DataField>
+        </Field>
+        <Field Name="Pertenece_al_proyecto">
+          <DataField>Pertenece_al_proyecto</DataField>
+        </Field>
+        <Field Name="Descripcion_Tarea">
+          <DataField>Descripcion_Tarea</DataField>
+        </Field>
+        <Field Name="Horas_planificadas">
+          <DataField>Horas_planificadas</DataField>
+        </Field>
+        <Field Name="Horas_planificadasFormat">
+          <DataField>Horas_planificadasFormat</DataField>
+        </Field>
+        <Field Name="Usuario_asignado">
+          <DataField>Usuario_asignado</DataField>
+        </Field>
+        <Field Name="Finalizada">
+          <DataField>Finalizada</DataField>
+        </Field>
+        <Field Name="Proyecto_Asociado">
+          <DataField>Proyecto_Asociado</DataField>
+        </Field>
+        <Field Name="Tarea_del_proyecto">
+          <DataField>Tarea_del_proyecto</DataField>
+        </Field>
+        <Field Name="Horas_registradas">
+          <DataField>Horas_registradas</DataField>
+        </Field>
+        <Field Name="Horas_registradasFormat">
+          <DataField>Horas_registradasFormat</DataField>
+        </Field>
+        <Field Name="Descripcion">
+          <DataField>Descripcion</DataField>
+        </Field>
+        <Field Name="Usuario_impicado">
+          <DataField>Usuario_impicado</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

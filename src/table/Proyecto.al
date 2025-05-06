@@ -40,7 +40,7 @@ table 50100 Proyecto
 
             trigger OnValidate()
             begin
-                // Se calcula automáticamente con una función
+
                 "% TareasFinalizadas" := CalculateCompletionPercentage();
             end;
         }

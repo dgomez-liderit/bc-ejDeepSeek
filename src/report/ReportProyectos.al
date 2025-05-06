@@ -28,7 +28,7 @@ report 50101 "Informe de Proyectos"
 
                 dataitem("Registro de tiempo"; "Registro de tiempo")
                 {
-                    DataItemLink = "Proyecto" = field("Numero de tarea");
+                    DataItemLink = "Tarea del proyecto" = field("Numero de tarea");
                     column(Proyecto_Asociado; Proyecto) { }
                     column(Tarea_del_proyecto; "Tarea del proyecto") { }
                     column(Horas_registradas; "Horas registradas") { }
