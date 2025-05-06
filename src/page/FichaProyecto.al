@@ -22,6 +22,7 @@ page 50102 "Ficha de proyecto"
                 }
                 field("Fecha inicio"; Rec."Fecha inicio")
                 {
+                    CaptionML = ENU = 'Init date test', ESP = 'Fecha inicio';
                     ApplicationArea = All;
                 }
                 field("Fecha fin"; Rec."Fecha fin")
